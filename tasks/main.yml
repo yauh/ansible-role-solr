@@ -1,0 +1,6 @@
+---
+# file: roles/role-solr/tasks/main.yml
+
+- include: solr_debian.yml
+  when: ansible_distribution in [ 'Debian', 'Ubuntu' ]
+  

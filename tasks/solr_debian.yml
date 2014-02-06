@@ -1,0 +1,16 @@
+---
+# file: roles/role-solr/tasks/solr_debian.yml
+
+- name: Grab Solr
+  get_url: url={{solr_source}}/{{solr_version}}/solr-{{solr_version}}.tgz dest={{solr_destination}}
+
+- name: Extract Solr
+  command: tar xzvf {{solr_destination}}/solr-{{solr_version}}.tgz -C {{solr_destination}}
+
+- name: Create symlink to solr
+  file: state=link src={{solr_destination}}/solr-{{solr_version}} dest={{solr_destination}}/solr
+  
+- name: Startup script
+  template: > 
+    src=solr.j2 dest=/etc/init.d/solr
+    owner=root group=root mode=755
