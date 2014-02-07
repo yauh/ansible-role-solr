@@ -6,7 +6,7 @@ A role to quickly install Solr
 Requirements
 ------------
 
-Java needs to be available on the system, the role oracle7java is recommended.
+Java needs to be available on the system, the role oracle7-java is recommended.
 
 Role Variables
 --------------
@@ -22,7 +22,7 @@ The following variables can be used with the solr role:
 Dependencies
 ------------
 
-- oracle7java
+- oracle7-java
 
 License
 -------
