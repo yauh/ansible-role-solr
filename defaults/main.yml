@@ -3,6 +3,7 @@
     
 solr_source: http://apache.openmirror.de/lucene/solr
 solr_version: 4.6.1
-solr_destination: /usr/local/src/
+solr_destination: /usr/local/src
 solr_home: "{{solr_destination}}/solr/example"
+solr_home_core: example
 solr_memory: 1024
