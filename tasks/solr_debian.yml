@@ -10,25 +10,6 @@
 - name: Create symlink to solr
   file: state=link src={{solr_destination}}/solr-{{solr_version}} dest={{solr_destination}}/solr
 
-- name: Set up solr_home directory and core
-  file: state=directory path={{solr_home}}/{{solr_core_name}}/conf
-
-- name: solr.xml
-  template: > 
-    src=solr_xml.j2 dest={{solr_home}}/solr.xml
-
-- name: core.properties
-  template: > 
-    src=core_properties.j2 dest={{solr_home}}/{{solr_core_name}}/core.properties
-
-- name: solrconfig.xml
-  template: > 
-    src=solrconfig_xml.j2 dest={{solr_home}}/{{solr_core_name}}/conf/solrconfig.xml
-  
-- name: schema.xml
-  template: > 
-    src=schema_xml.j2 dest={{solr_home}}/{{solr_core_name}}/conf/schema.xml  
-
 - name: Startup script
   template: > 
     src=solr.j2 dest=/etc/init.d/solr
