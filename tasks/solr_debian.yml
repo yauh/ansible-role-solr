@@ -3,13 +3,16 @@
 
 - name: Grab Solr
   get_url: url={{solr_source}}/{{solr_version}}/{{ solr_basename }}.tgz dest={{solr_destination}}/{{ solr_basename }}.tgz
+  tags: [solr]
 
 - name: Extract Solr
   command: tar xzvf {{solr_destination}}/{{ solr_basename }}.tgz -C {{solr_destination}} creates={{solr_destination}}/{{ solr_basename }}
 - name: Create symlink to solr
   file: state=link src={{solr_destination}}/{{ solr_basename }} dest={{solr_destination}}/solr
+  tags: [solr]
 
 - name: Startup script
   template: > 
     src=solr.j2 dest=/etc/init.d/solr
     owner=root group=root mode=755
+  tags: [solr]
