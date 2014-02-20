@@ -2,13 +2,12 @@
 # file: roles/role-solr/tasks/solr_debian.yml
 
 - name: Grab Solr
-  get_url: url={{solr_source}}/{{solr_version}}/solr-{{solr_version}}.tgz dest={{solr_destination}}
+  get_url: url={{solr_source}}/{{solr_version}}/{{ solr_basename }}.tgz dest={{solr_destination}}/{{ solr_basename }}.tgz
 
 - name: Extract Solr
-  command: tar xzvf {{solr_destination}}/solr-{{solr_version}}.tgz -C {{solr_destination}}
-
+  command: tar xzvf {{solr_destination}}/{{ solr_basename }}.tgz -C {{solr_destination}} creates={{solr_destination}}/{{ solr_basename }}
 - name: Create symlink to solr
-  file: state=link src={{solr_destination}}/solr-{{solr_version}} dest={{solr_destination}}/solr
+  file: state=link src={{solr_destination}}/{{ solr_basename }} dest={{solr_destination}}/solr
 
 - name: Startup script
   template: > 
