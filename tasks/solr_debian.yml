@@ -16,3 +16,5 @@
     src=solr.j2 dest=/etc/init.d/solr
     owner=root group=root mode=755
   tags: [solr]
+  notify:
+   - solr restart
