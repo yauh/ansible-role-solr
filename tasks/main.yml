@@ -3,4 +3,4 @@
 
 - include: solr_debian.yml
   when: ansible_distribution in [ 'Debian', 'Ubuntu' ]
-  
+  tags: [solr]
