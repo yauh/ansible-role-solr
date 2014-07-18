@@ -6,7 +6,7 @@ A role to quickly install Solr
 Requirements
 ------------
 
-Java needs to be available on the system, the role oracle7-java is recommended.
+Java needs to be available on the system, the role oracle_java7 is recommended.
 
 Role Variables
 --------------
@@ -22,7 +22,7 @@ The following variables can be used with the solr role:
 Dependencies
 ------------
 
-- oracle7-java
+* [briancoca.oracle_java7](https://galaxy.ansible.com/list#/roles/628) to use Oracle Java 7
 
 License
 -------
