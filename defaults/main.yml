@@ -7,3 +7,4 @@ solr_destination: /usr/local/src
 solr_home: "{{solr_destination}}/solr/example"
 solr_memory: 1024
 solr_basename: solr-{{solr_version}}
+solr_home_system: multicore
