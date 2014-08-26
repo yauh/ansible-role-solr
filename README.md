@@ -18,6 +18,7 @@ The following variables can be used with the solr role:
     solr_destination: /usr/local/src                     # where to install Solr to
     solr_home: "{{solr_destination}}/solr/example"       # the Solr home directory, unless specified, this will use example
     solr_memory: 1024                                    # maximum memory for the Solr process
+    solr_home_system: multicore                          # the system loaded by jetty
 
 Dependencies
 ------------
